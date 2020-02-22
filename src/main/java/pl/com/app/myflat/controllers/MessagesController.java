@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
-public class WelcomePageController {
+@RequestMapping("/messages")
+public class MessagesController {
 
-    @GetMapping
-    public String showWelcomePage() {
-        return "welcome-page";
+
+        @GetMapping
+        public String prepareLoginPage() {
+            return "messages";
+        }
     }
-}

@@ -2,21 +2,24 @@
   Created by IntelliJ IDEA.
   User: Bea
   Date: 2020-02-16
-  Time: 10:54
+  Time: 11:31
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Header</title>
+
+    <link href="/static/css/bill.css" type="text/css" rel="stylesheet">
+    <link href="../../static/css/style.css" type="text/css" rel="stylesheet">
+
 </head>
 <body>
-Header:
-<div class="row" style="margin-top: 40px">
-    <div class="col-1"></div>
-    <div class="col-10" style="padding-bottom: 60px"><h>MyFlat</h></div>
-    <div class="col-1"></div>
+
+<div id="main-sec">
+
+
 </div>
+
 
 </body>
 </html>

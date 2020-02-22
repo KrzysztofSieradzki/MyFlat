@@ -1,37 +1,29 @@
 package pl.com.app.myflat.model.entities;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import pl.com.app.myflat.model.enums.Category;
 
 import javax.persistence.*;
+
 import java.util.Date;
 
+@Getter @Setter @NoArgsConstructor
+@AllArgsConstructor
+@ToString (exclude = {"user"}) @EqualsAndHashCode (of = "id")
+@Builder
 @Entity
-@Getter
-@Setter
-@ToString(exclude = {"user"})
-@EqualsAndHashCode(of="id")
 @Table(name="bills")
 public class Bill extends EntityBase {
 
 
-    @Column(nullable = false)
-    private String category;
+    @Enumerated(EnumType.STRING)
+    private Category category;
     @Column(nullable = false)
     private String invoiceNumber;
     @Column(nullable = false)
     private Date invoiceDate;
     @Column(nullable = false)
-    private Integer netto;
-    @Column(nullable = false)
-    private Integer vat;
-    @Column(nullable = false)
-    private Integer brutto;
-    @Column
-    private String company;
+    private Double grossAmount;
     @Column(nullable = false)
     private Boolean active = true;
     @ManyToOne
